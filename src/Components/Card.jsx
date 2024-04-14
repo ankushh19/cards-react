@@ -8,6 +8,7 @@ function Card() {
       name: "Amazon Basics",
       description:
         " Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iste cupiditate aliquam maiores.",
+      instock: true,
     },
     {
       image:
@@ -15,6 +16,7 @@ function Card() {
       name: "Office Amazon",
       description:
         " Ipsum dolor sit amet consectetur adipisicing elit. Iste cupiditate aliquam maiores.",
+      instock: false,
     },
     {
       image:
@@ -22,6 +24,7 @@ function Card() {
       name: "iPhone 11",
       description:
         " Dolor sit amet consectetur adipisicing elit. Iste cupiditate aliquam maiores.",
+      instock: true,
     },
   ];
   return (
@@ -34,6 +37,13 @@ function Card() {
           <div className="w-full px-3 py-4">
             <h2 className="font-semibold">{elem.name}</h2>
             <p className="text-xs mt-5">{elem.description}</p>
+            <button
+              className={`px-4 py-1 mt-3 ${
+                elem.instock ? "bg-blue-500" : "bg-red-500"
+              } text-xs rounded text-zinc-100`}
+            >
+              {elem.instock ? "In Stock" : "Out of Stock"}
+            </button>
           </div>
         </div>
       ))}
